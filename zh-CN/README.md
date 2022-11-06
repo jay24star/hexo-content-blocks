@@ -1,16 +1,16 @@
-en-US | [zh-CN](./zh-CN/README.md)
+[en-US](../README.md) | zh-CN
 
 # hexo-content-blocks
 
-A plugin for Hexo, which allows someone to use content block with styles. Customization supported.
+一个为 Hexo 设计的插件，可以使用带有样式的内容块，并且支持自定义哦。
 
-(Idea from [OI-Wiki](https://oi-wiki.org/))
+（灵感来源于 [OI-Wiki](https://oi-wiki.org/)）
 
-It supports foldable content boxes and not-foldable content blocks (in the future). Now, it supports you to custom the color and the icon in a certain type. It will give you several themes to choose in the future.
+它支持可折叠的内容框，将来还会支持不可折叠的内容块。现在，你可以自定义指定类型的颜色和图标。当前，我们支持一种主题，以后可能会有更多的主题可供选择。
 
-You can easily use it by writting a Hexo tag.
+要用它的话，直接写一个 Hexo 标签就可以啦。
 
-Demo. (Sure. It's a code for a template problem. Guess which.)
+如下。（没错，这是一道板子题的代码，猜猜是哪道）
 
 <details type="note">
   <summary>参考代码</summary>
@@ -121,15 +121,15 @@ Demo. (Sure. It's a code for a template problem. Guess which.)
 
 <style>details.note,details.success,details.failure,details.warning,details.info,details.question{display:block!important;padding-top:0!important;box-shadow:0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12), 0 3px 1px -2px rgba(0, 0, 0, .2)!important;position:relative!important;margin:1.5625em 0!important;padding:0 1em!important;border-left:.2em solid!important;border-radius:.1em!important;font-size:.9em!important;overflow:auto!important;}details.note:not([open]),details.success:not([open]),details.failure:not([open]),details.warning:not([open]),details.info:not([open]),details.question:not([open]){padding-bottom:0!important;}details.note{border-left-color:#448aff!important;}details.success{border-left-color:#00c853!important;}details.failure{border-left-color:#ff5252!important;}details.warning{border-left-color:#ff9100!important;}details.info{border-left-color:#00b8d4!important;}details.question{border-left-color:#64dd17!important;}details.note>summary,details.success>summary,details.failure>summary,details.warning>summary,details.info>summary,details.question>summary{margin:0 -1em 1em -1em;padding:.4em .6em .4em 3em;border-bottom:.05em solid;font-weight:700;display:block;outline:none;cursor:pointer;}details.note>summary{border-bottom-color:rgba(68, 138, 255, .1);background-color:rgba(68, 138, 255, .1);}details.success>summary{border-bottom-color:rgba(0, 200, 83, .1);background-color:rgba(0, 200, 83, .1);}details.failure>summary{border-bottom-color:rgba(255, 82, 82, .1);background-color:rgba(255, 82, 82, .1);}details.warning>summary{border-bottom-color:rgba(255, 145, 0, .1);background-color:rgba(255, 145, 0, .1);}details.info>summary{border-bottom-color:rgba(0, 184, 212, .1);background-color:rgba(0, 184, 212, .1);}details.question>summary{border-bottom-color:rgba(100, 221, 23, .1);background-color:rgba(100, 221, 23, .1);}details.note:not([open])>summary,details.success:not([open])>summary,details.failure:not([open])>summary,details.warning:not([open])>summary,details.info:not([open])>summary,details.question:not([open])>summary{border-bottom:0;margin-bottom:0;}details.note>summary:before,details.success>summary:before,details.failure>summary:before,details.warning>summary:before,details.info>summary:before,details.question>summary:before,details.note>summary:after,details.success>summary:after,details.failure>summary:after,details.warning>summary:after,details.info>summary:after,details.question>summary:after{font-family:"Font Awesome 6 Free";font-style:normal;}details.note>summary:before,details.success>summary:before,details.failure>summary:before,details.warning>summary:before,details.info>summary:before,details.question>summary:before{position:absolute;left:1.25em;}details.note>summary:before{color:#448aff;content:"\f304";}details.success>summary:before{color:#00c853;content:"\f00c";}details.failure>summary:before{color:#ff5252;content:"\f00d";}details.warning>summary:before{color:#ff9100;content:"\f071";}details.info>summary:before{color:#00b8d4;content:"\f05a";}details.question>summary:before{color:#64dd17;content:"\f059";}details.note>summary:after,details.success>summary:after,details.failure>summary:after,details.warning>summary:after,details.info>summary:after,details.question>summary:after{position:absolute;right:1.25em;color:rgba(0, 0, 0, .26);content:"\f078";}details.note[open]>summary:after,details.success[open]>summary:after,details.failure[open]>summary:after,details.warning[open]>summary:after,details.info[open]>summary:after,details.question[open]>summary:after{content:"\f077";}</style>
 
-# Install & Preset
+# 安装 & 预设
 
-Execute the following command in the working directory:
+在工作目录下执行以下命令：
 
 ```sh
 $ npm install hexo-content-blocks --save
 ```
 
-In the universal layout file for `<head>` tags (For example, `themes/next/layout/_partials/head/head.njk` in theme NexT), simply add the following codes:
+在适用于所有页面的 `<head>` 标签的布局文件中（比方说 NexT 主题的  `themes/next/layout/_partials/head/head.njk`），加入下面几行：
 
 ```njk
 {%- if config.content_blocks.enable %}
@@ -137,7 +137,7 @@ In the universal layout file for `<head>` tags (For example, `themes/next/layout
 {%- endif %}
 ```
 
-In the site config file, simple add the following codes:
+在站点配置文件里，加入以下几行：
 
 ```yml
 # Content blocks
@@ -152,46 +152,46 @@ content_blocks:
     question: 64dd17 || \f059
 ```
 
-We have prepared 6 types in advance. (note, success, failure, warning, info, question)
+我们预先准备了六种类型。（note, success, failure, warning, info, question）
 
-# Remove & Clear
+# 移除 & 清理
 
-Execute the following command in the working directory:
+在工作目录下执行以下命令：
 
 ```sh
 $ npm uninstall hexo-content-blocks --save
 ```
 
-Delete the codes you have added into the files. You can find it in [Install & Preset](#install--preset).
+删除你在配置文件中加入的代码。你可以在 [安装 & 预设](#安装--预设) 里找到它们。
 
-# Usage
+# 用法
 
-You can use it just by writing a tag in your Markdown file. Like this:
+你只需要在 Markdown 文件中写一个 Hexo 标签，就像这样：
 
 ```
 {% content_box type:Type title:Title [open] %}
 ```
 
-Replace `Type` with the type you want to use, in the 6 preset types and your custom ones. It is `Note` by default.
+将 `Type` 替换为你想要采用的类型，在预设 6 种或是你自定义的类型中选择。默认 `Note`。
 
-Replace `Title` with the title word given on the head line. It is the type name by default.
+将 `Title` 替换为在首部显示的标题文字。默认是类型名。
 
-If you add an `open`, it means the content box will be open by default. Otherwise, it will be folded by default.
+如果添加了一句 `open`，折叠框就会默认展开。否则默认折叠。
 
-You can custom type styles as long as you'd like to. Just add below the codes we added to site config file, like this:
+只要你想，你就可以自定义类型。就在站点配置文件里我们添加的代码那里，像这样：
 
 ```yml
 typename: color || icon
 ```
 
-Set typename as you like. The color needs to be hex RGB codes, like `448aff` or `"#448aff"`. The icon font is Font Awesome 6 Free, so you should look for the Unicode from [Font Awesome](https://fontawesome.com/icons).
+typename 随便起一个好听点的名字。color 需要是十六进制 RGB 代码，比方说 `448aff`、`"#448aff"`。图标字体是 Font Awesome 6 Free，所以你需要在[Font Awesome](https://fontawesome.com/icons) 上面找到图标的 Unicode 编码，再把它写到 color 的位置。
 
-# About Author
+# 关于作者
 
-The author is Sukwants, just an OIer in Chengdu No.7 High School. Well, so weak. And others in Chengdu No.7 High School and Mianyang Dongchen High School is so powerful.
+这个插件的作者是 Sukwants，成都市磨子桥职业技术高中的小蒟蒻，当然，森萌和西橙（啊玩小老虎的梗）的其他同学都非常巨。
 
-Today is Nov.6, 2022 and NOIP 2022 is on Nov.26, 2022. I don't know where should I go when I am kicked out after NOIP. I want to study better, but I'm wasting time designing such a plugin. I'll cherish the works, as a piece of memories in my life.
+今天是 2022 年 11 月 6 日，NOIP 2022 是 2022 年 11 月 26 日。我不清楚，在 NOIP 过后我被刷下来以后，将何去何从。我想要学得更好，但是我还在浪费时间编写这个插件。但我会珍惜这些劳动成果，因为这是人生中的一段记忆。
 
-However, I have to go to study for OI now. There is no more time for me to waste. Just wish NOIP rp++.
+然而，是时候开始卷了，没有更多的时间来躺平了。只希望 NOIP 人品加加加加加。
 
-That's all.
+结束了。
