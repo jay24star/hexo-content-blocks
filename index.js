@@ -9,10 +9,12 @@
  ****************** Made By Sukwants ******************/
 
 
+var openbutton = hexo.config.content_blocks.open_button;
+var types = hexo.config.content_blocks.types;
+
 {     /* Generate CSS styles for content boxes. */
   const map = { 0:0, 1:1, 2:2, 3:3, 4:4, 5:5, 6:6, 7:7, 8:8, 9:9, A:10, B:11, C:12, D:13, E:14, F:15, a:10, b:11, c:12, d:13, e:14, f:15 };
   const rule = /\s*\|\|\s*/;
-  var types = hexo.config.content_blocks.types;
   for (var i in types) {
     var info = types[i].split(rule);
     if (info[0][0] == '#') info[0] = info[0].substring(1);
@@ -34,7 +36,7 @@
   for (var i in types) {
     res = res + 'details.' + i + '>summary,';
   }
-  res = res.substring(0, res.length - 1) + '{margin:0 -1em 1em -1em;padding:.4em .6em .4em 3em;border-bottom:.05em solid;font-weight:700;display:block;outline:none;cursor:pointer;}';
+  res = res.substring(0, res.length - 1) + '{margin:0 -1em 1em -1em;padding:.4em .6em .4em .6em;border-bottom:.05em solid;font-weight:700;display:block;outline:none;cursor:pointer;}';
   for (var i in types) {
     res = res + 'details.' + i + '>summary{border-bottom-color:' + types[i][1] + ';background-color:' + types[i][1] + ';}';
   }
@@ -43,27 +45,27 @@
   }
   res = res.substring(0, res.length - 1) + '{border-bottom:0;margin-bottom:0;}';
   for (var i in types) {
-    res = res + 'details.' + i + '>summary:before,';
+    res = res + 'details.' + i + '>summary>div.box-open-button,';
+  }
+  res = res.substring(0, res.length - 1) + '{float:right;}';
+  for (var i in types) {
+    res = res + 'details.' + i + '>summary>i,';
   }
   for (var i in types) {
-    res = res + 'details.' + i + '>summary:after,';
+    res = res + 'details.' + i + '>summary>div.box-open-button>i,';
   }
-  res = res.substring(0, res.length - 1) + '{font-family:"Font Awesome 6 Free";font-style: normal;}';
+  res = res.substring(0, res.length - 1) + '{margin:0 .6125em 0 .6125em;}';
   for (var i in types) {
-    res = res + 'details.' + i + '>summary:before,';
-  }
-  res = res.substring(0, res.length - 1) + '{position:absolute;left:1.25em;}';
-  for (var i in types) {
-    res = res + 'details.' + i + '>summary:before{color:' + types[i][0] + ';content:"' + types[i][2] + '";}';
+    res = res + 'details.' + i + '>summary>i{color:' + types[i][0] + ';}';
   }
   for (var i in types) {
-    res = res + 'details.' + i + '>summary:after,';
+    res = res + 'details.' + i + '>summary>div.box-open-button>i,';
   }
-  res = res.substring(0, res.length - 1) + '{position:absolute;right:1.25em;color:rgba(0,0,0,.26);content: "\\f078";}';
+  res = res.substring(0, res.length - 1) + '{color:rgba(0,0,0,.26);}';
   for (var i in types) {
-    res = res + 'details.' + i + '[open]>summary:after,';
+    res = res + 'details[open].' + i + '>summary>div.box-open-button>i,';
   }
-  res = res.substring(0, res.length - 1) + '{content: "\\f077";}';
+  res = res.substring(0, res.length - 1) + '{transform:rotate(180deg);}';
 
   hexo.extend.helper.register('content_blocks_css', function() {
     return res;
@@ -101,7 +103,9 @@
         open = true;
       }
     }
-    return '<details class="' + type + '"' + (open ? ' open' : '') + '><summary>' + title + '</summary>' + content + '</details>';
+    return '<details class="' + type + '"' + (open ? ' open' : '') + '><summary><i class="' 
+         + types[type][2] + ' fa-fw"></i>' + title + '<div class="box-open-button"><i class="'
+         + openbutton + ' fa-fw"></i></summary>' + content + '</details>';
   }
 
   hexo.extend.tag.register('contentbox', contentBox, {ends: true});

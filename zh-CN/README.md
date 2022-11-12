@@ -26,7 +26,7 @@ $ npm install hexo-content-blocks --save
 
 ```njk
 {%- if config.content_blocks.enable %}
-  <style>{{ content_blocks_css() }}</style>
+  <style type="text/css">{{ content_blocks_css() }}</style>
 {%- endif %}
 ```
 
@@ -34,18 +34,23 @@ $ npm install hexo-content-blocks --save
 
 ```yml
 # Content blocks
+## Docs: https://github.com/Sukwants/hexo-content-blocks
 content_blocks:
   enable: true
+  open_button: fa fa-chevron-down
   types:
-    note: 448aff || \f304
-    success: 00c853 || \f00c
-    failure: ff5252 || \f00d
-    warning: ff9100 || \f071
-    info: 00b8d4 || \f05a
-    question: 64dd17 || \f059
+    note: 448aff || fa fa-pen
+    success: 00c853 || fa fa-check
+    failure: ff5252 || fa fa-xmark
+    warning: ff9100 || fa fa-triangle-exclamation
+    info: 00b8d4 || fa fa-circle-info
+    question: 64dd17 || fa fa-circle-question
+    example: 651fff || fa fa-list
 ```
 
-我们预先准备了六种类型。（note, success, failure, warning, info, question）
+我们预先准备了七种类型。（note, success, failure, warning, info, question, example）
+
+注意，你需要在你的站点中引用 Font Awesome 字体库，这样我们才能够使用图标。如果还没有，出门右转 [Font Awesome 说明文档 HTML + CSS 法](https://fontawesome.com/v6/docs/web/setup/host-yourself/webfonts)。
 
 # 移除 & 清理
 
@@ -61,9 +66,13 @@ $ npm uninstall hexo-content-blocks --save
 
 你只需要在 Markdown 文件中写一个 Hexo 标签，就像这样：
 
+```njk
+{% contentbox type:Type title:Title [open] %}
+Content...
+{% endcontentbox %}
 ```
-{% content_box type:Type title:Title [open] %}
-```
+
+将 `Content...` 替换为正文内容。
 
 将 `Type` 替换为你想要采用的类型，在预设 6 种或是你自定义的类型中选择。默认 `Note`。
 
@@ -77,7 +86,23 @@ $ npm uninstall hexo-content-blocks --save
 typename: color || icon
 ```
 
-typename 随便起一个好听点的名字。color 需要是十六进制 RGB 代码，比方说 `448aff`、`"#448aff"`。图标字体是 Font Awesome 6 Free，所以你需要在[Font Awesome](https://fontawesome.com/icons) 上面找到图标的 Unicode 编码，再把它写到 color 的位置。
+typename 随便起一个好听点的名字。color 需要是十六进制 RGB 代码，比方说 `448aff`、`"#448aff"`。图标字体是 Font Awesome，所以你需要在[Font Awesome](https://fontawesome.com/icons) 上面找到图标的代码。
+
+# 更新
+
+在工作目录下执行以下命令：
+
+```sh
+$ npm install hexo-content-blocks --save
+```
+
+接下来，查阅以下指令，如果你正处于满足某个条件的版本，那你就需要执行下面的指令。
+
+## v1.0.0 及以前
+
+修改站点配置文件里的代码。
+
+修改 head 文件里的代码。（事实上，这一项不必修改。）
 
 # 关于作者
 
@@ -87,4 +112,4 @@ typename 随便起一个好听点的名字。color 需要是十六进制 RGB 代
 
 然而，是时候开始卷了，没有更多的时间来躺平了。只希望 NOIP 人品加加加加加。
 
-结束了。
+以上。
