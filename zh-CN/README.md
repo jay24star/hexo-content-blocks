@@ -46,9 +46,10 @@ content_blocks:
     info: 00b8d4 || fa fa-circle-info
     question: 64dd17 || fa fa-circle-question
     example: 651fff || fa fa-list
+    quote: 9e9e9e || fa fa-quote-right
 ```
 
-我们预先准备了七种类型。（note, success, failure, warning, info, question, example）
+我们预先准备了 8 种类型。（note, success, failure, warning, info, question, example, quote）
 
 注意，你需要在你的站点中引用 Font Awesome 字体库，这样我们才能够使用图标。如果还没有，出门右转 [Font Awesome 说明文档 HTML + CSS 法](https://fontawesome.com/v6/docs/web/setup/host-yourself/webfonts)。
 
@@ -74,7 +75,7 @@ Content...
 
 将 `Content...` 替换为正文内容。
 
-将 `Type` 替换为你想要采用的类型，在预设 6 种或是你自定义的类型中选择。默认 `Note`。
+将 `Type` 替换为你想要采用的类型，在预设或是你自定义的类型中选择。默认 `Note`。
 
 将 `Title` 替换为在首部显示的标题文字。默认是类型名。
 
@@ -98,11 +99,13 @@ $ npm install hexo-content-blocks --save
 
 接下来，查阅以下指令，如果你正处于满足某个条件的版本，那你就需要执行下面的指令。
 
-## v1.0.0 及以前
+## v1.1.0 及以前
 
 修改站点配置文件里的代码。
 
-修改 head 文件里的代码。（事实上，这一项不必修改。）
+## v1.0.0 及以前
+
+修改 head 文件里的代码。（事实上，这个是不必修改的。）
 
 # 关于作者
 

@@ -46,9 +46,10 @@ content_blocks:
     info: 00b8d4 || fa fa-circle-info
     question: 64dd17 || fa fa-circle-question
     example: 651fff || fa fa-list
+    quote: 9e9e9e || fa fa-quote-right
 ```
 
-We have prepared 7 types in advance. (note, success, failure, warning, info, question, example)
+We have prepared 8 types in advance. (note, success, failure, warning, info, question, example, quote)
 
 ATTENTION. You need to import Font Awesome in your site, only in this way can we make the icons work. If haven't had, turn to [Font Awesome Docs for HTML + CSS Method](https://fontawesome.com/v6/docs/web/setup/host-yourself/webfonts).
 
@@ -74,7 +75,7 @@ Content...
 
 Replace `Content...` with the body content.
 
-Replace `Type` with the type you want to use, in the 6 preset types and your custom ones. It is `Note` by default.
+Replace `Type` with the type you want to use, chosen from preset or your custom types. It is `Note` by default.
 
 Replace `Title` with the title word given on the head line. It is the type name by default.
 
@@ -101,6 +102,8 @@ Then read the following instructions and decide some of them to take. The versio
 ## v1.0.0 and before
 
 Modify the codes put in the config file.
+
+## v1.0.0 and before
 
 Modify the codes put in the header file. (Actually, it doesn't matter.)
 
