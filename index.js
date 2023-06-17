@@ -102,6 +102,9 @@
        else if (args[i] == 'open') {
          open = true;
        }
+       else { /* Unrecognized argument is part of title jay24star 2023.6.18 */
+        title = title + ' ' + args[i];
+       }
      }
      return '<details class="' + type + '"' + (open ? ' open' : '') + '><summary><i class="' 
           + types[type][2] + ' fa-fw"></i>' + title + '<div class="box-open-button"><i class="'
